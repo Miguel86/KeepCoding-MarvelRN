@@ -1,0 +1,1 @@
+export const marvelAPIKey = 'PUBLIC'
