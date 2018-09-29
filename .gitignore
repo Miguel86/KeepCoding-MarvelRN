@@ -402,5 +402,4 @@ gradle-app.setting
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
 
-
 # End of https://www.gitignore.io/api/node,xcode,reactnative,androidstudio
