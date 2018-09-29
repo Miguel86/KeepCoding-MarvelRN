@@ -4,6 +4,7 @@ import { ComicCell  } from '../../widgets/'
 import styles from './styles'
 import { connect } from 'react-redux'
 import * as ComicsActions from '../../../redux/comics/actions'
+import { Actions } from 'react-native-router-flux'
 
 class Comics extends Component {
 
@@ -73,6 +74,8 @@ const mapDispatchToProps = (dispatch, props) => {
         },
         onComicTapped: (comic) => {
             console.log("onComicTapped comic: ", comic)
+            dispatch(ComicsActions.setItem(comic))
+            Actions.comicDetails({title: 'Detalles'})
         }
     }
 }

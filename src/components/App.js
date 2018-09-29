@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { StatusBar, TouchableOpacity, Text } from 'react-native'
 import { Router, Scene, Stack, Actions } from 'react-native-router-flux'
-import { Comics } from './sections/'
+import { Comics, ComicDetails } from './sections/'
 import * as api from '../api/'
 
 import { createStore, applyMiddleware, combineReducers } from 'redux'
@@ -35,6 +35,7 @@ export default class App extends Component {
                 <Router>
                     <Stack key="root">
                         <Scene key="comics" component={Comics} hideNavBar={true} initial={true} />
+                        <Scene key="comicDetails" component={ComicDetails} {...sceneDefaultStyles} />
                     </Stack>
                 </Router>
             </Provider>
