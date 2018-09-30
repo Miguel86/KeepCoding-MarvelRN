@@ -1,4 +1,5 @@
 import * as types from './types'
+import { Actions } from 'react-native-router-flux'
 
 function setFetching(value) {
     return {
@@ -36,5 +37,11 @@ export function fetchComicsList() {
                 dispatch(setFetching(false))
                 console.log("fetchComicsList error: ", err)
             })  
+    }
+}
+
+export function postComic(data) {
+    return (dispatch, getState, api) => {
+        Actions.pop()
     }
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { StatusBar, TouchableOpacity, Text } from 'react-native'
 import { Router, Scene, Stack, Actions } from 'react-native-router-flux'
-import { Comics, ComicDetails } from './sections/'
+import { Comics, ComicDetails, ComicAdd } from './sections/'
 import * as api from '../api/'
 
 import { createStore, applyMiddleware, combineReducers } from 'redux'
@@ -22,6 +22,12 @@ const sceneDefaultStyles = {
     titleStyle:{ color: 'white' },
 }
 
+const RightButton = props => (
+    <TouchableOpacity style={{padding: 10}} onPress={() => Actions.comicAdd()}>
+        <Text style={{color: 'white', fontWeight: 'bold'}}>{'Añadir'}</Text>
+    </TouchableOpacity>
+)
+
 export default class App extends Component {
  
     componentWillMount() {
@@ -34,8 +40,13 @@ export default class App extends Component {
             <Provider store={store}>
                 <Router>
                     <Stack key="root">
-                        <Scene key="comics" component={Comics} hideNavBar={true} initial={true} />
+                        <Scene key="comics" component={Comics} initial={true} 
+                        {...sceneDefaultStyles}
+                        titleStyle={{color: 'red'}}
+                        renderRightButton={RightButton}
+                        />
                         <Scene key="comicDetails" component={ComicDetails} {...sceneDefaultStyles} />
+                        <Scene key="comicAdd" component={ComicAdd} title={'Añadir'} {...sceneDefaultStyles} />
                     </Stack>
                 </Router>
             </Provider>
