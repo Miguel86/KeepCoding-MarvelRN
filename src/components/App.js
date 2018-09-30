@@ -28,6 +28,7 @@ const RightButton = props => (
     </TouchableOpacity>
 )
 
+
 export default class App extends Component {
  
     componentWillMount() {
@@ -45,7 +46,7 @@ export default class App extends Component {
                         titleStyle={{color: 'red'}}
                         renderRightButton={RightButton}
                         />
-                        <Scene key="comicDetails" component={ComicDetails} {...sceneDefaultStyles} />
+                        <Scene key="comicDetails" component={ComicDetails} {...sceneDefaultStyles}/>
                         <Scene key="comicAdd" component={ComicAdd} title={'Añadir'} {...sceneDefaultStyles} />
                     </Stack>
                 </Router>

@@ -46,9 +46,7 @@ class Comics extends Component {
                     renderItem={ value => this._renderItem(value) }
                     keyExtractor={ (item, i) => 'cell' + item.id }
                     extraData={this.props}
-                    numColumns={2}
-                    style={{paddingTop: 40}}
-                    
+                    numColumns={2}                
                 />
                 {this._renderActivityIndicator()}
 

@@ -8,7 +8,7 @@ export function configureAxios() {
 }
 
 export function fetchComics() {
-    const url = '/v1/public/comics?apikey='+Settings.marvelAPIKey
+    const url = '/v1/public/comics?formatType=collection&apikey='+Settings.marvelAPIKey
     console.log("URL: ",url)
     return axios.get(url)
 }
